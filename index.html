@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Car Drift Game</title>
+<style>
+body{
+margin:0;
+overflow:hidden;
+background:gray;
+}
+
+#car{
+width:50px;
+height:100px;
+background:red;
+position:absolute;
+top:300px;
+left:300px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="car"></div>
+
+<script>
+let car = document.getElementById("car");
+let x = 300;
+let y = 300;
+
+document.addEventListener("keydown", function(e){
+
+if(e.key == "ArrowUp") y -= 10;
+if(e.key == "ArrowDown") y += 10;
+if(e.key == "ArrowLeft") x -= 10;
+if(e.key == "ArrowRight") x += 10;
+
+car.style.left = x + "px";
+car.style.top = y + "px";
+
+});
+</script>
+
+</body>
+</html>
